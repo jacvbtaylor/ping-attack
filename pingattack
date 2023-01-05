@@ -1,0 +1,16 @@
+#!/bin/bash
+#by @jacvbtaylor
+
+RED="\e[31m"
+GREEN="\e[32m"
+ENDCOLOR="\e[0m"
+ 
+printf "input the ip, then press enter\n\n"
+read IP \
+&& ping -c 1 ${IP}
+printf "${GREEN}\n\n\n[x]Host is up[x]\n\n\n${ENDCOLOR}" && echo "_______________________________" &&\
+ping -c 5 ${IP} && printf "${RED}\n\n~~~~STARTING ATTACK~~~~\n\n${ENDCOLOR}" \
+&& ping -c 13 ${IP} && printf "${GREEN}\n\n\n~~~~RESTING BEFORE ANOTHER ATTACK~~~~\n\n\n${ENDCOLOR}" &&\
+sleep 20 && ping -c 20 ${IP} && sleep 10 && ping -c 5 ${IP}\
+&& sleep 10 && printf "${RED}\n\n\n[x]FINAL ATTACK[x]\${ENDCOLOR}"\
+&& ping -c 30 ${IP}
